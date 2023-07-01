@@ -1,0 +1,11 @@
+<h2>Top Spider-Men</h2>
+<div class="spidermen-menu">
+  <a
+    *ngFor="let spiderman of spidermen"
+    routerLink="/detail/{{ spiderman.id }}"
+  >
+    {{ spiderman.name }}
+  </a>
+</div>
+
+<app-spiderman-search></app-spiderman-search>

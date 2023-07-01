@@ -1,0 +1,31 @@
+<h2>My Spider-Men</h2>
+<ul class="spidermen">
+  <li *ngFor="let spiderman of spiderVerse">
+    <a routerLink="/detail/{{ spiderman.id }}">
+      <span class="badge">{{ spiderman.id }}</span
+      >{{ spiderman.name }}
+    </a>
+    <button
+      type="button"
+      class="delete"
+      title="Delete Spider-Man"
+      (click)="delete(spiderman)"
+    >
+      x
+    </button>
+  </li>
+</ul>
+
+<div>
+  <label for="new-spiderman">Spider-Man Name: </label>
+  <input id="new-spiderman" #spidermanName />
+
+  <!-- (click) passes input value to add() and then clears the input -->
+  <button
+    type="button"
+    class="add-button"
+    (click)="add(spidermanName.value); spidermanName.value = ''"
+  >
+    Add Spider-Man
+  </button>
+</div>
